@@ -1,7 +1,37 @@
 <resources>
-    <string name="app_name">practice-android</string>
-    <string name="title_order_activity">Create order</string>
-    <string name="action_create_order">Create order</string>
+    <string name="app_name">Programmer\'s toolbox</string>
+    <string name="title_note_activity">Note</string>
+    <string name="action_make_note">Make a note</string>
     <string name="action_settings">Settings</string>
     <string name="action_share">Share</string>
+    <string name="fragment_home_text">Lets learn something!</string>
+    <string name="open_drawer">Open drawer</string>
+    <string name="close_drawer">Close drawer</string>
+    <string-array name="js_spa_frameworks">
+        <item>AngularJS</item>
+        <item>Ember.js</item>
+        <item>ExtJS</item>
+        <item>Knockout.js</item>
+        <item>Meteor.js</item>
+        <item>Aurelia</item>
+        <item>Vue.js</item>
+        <item>React</item>
+    </string-array>
+    <string-array name="java_web_frameworks">
+        <item>JSF</item>
+        <item>Struts</item>
+        <item>Hibernate</item>
+        <item>GWT</item>
+        <item>Vaadin</item>
+        <item>Wicket</item>
+        <item>Vert.X</item>
+        <item>Spring MVC</item>
+        <item>Play!</item>
+        <item>Grails</item>
+    </string-array>
+    <string-array name="categories">
+        <item>Home</item>
+        <item>JS SPA frameworks</item>
+        <item>Java Web frameworks</item>
+    </string-array>
 </resources>
