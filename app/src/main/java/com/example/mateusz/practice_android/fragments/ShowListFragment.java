@@ -1,15 +1,12 @@
 package com.example.mateusz.practice_android.fragments;
 
-
-import android.app.ListFragment;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.mateusz.practice_android.R;
 import com.example.mateusz.practice_android.adapters.MyAdapter;
@@ -28,27 +25,28 @@ public class ShowListFragment extends Fragment implements Categorized {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        int id = 0;
+        int technologiesNamesArrayId = 0;
+        int technologiesLogosArrayId = 0;
         if (savedInstanceState != null) {
             categoryId = savedInstanceState.getInt("id");
         }
         switch (categoryId) {
             case 1:
-                id = R.array.js_spa_frameworks;
+                technologiesNamesArrayId = R.array.js_spa_frameworks;
+                technologiesLogosArrayId = R.array.java_web_frameworks_logos;
                 break;
             case 2:
-                id = R.array.java_web_frameworks;
+                technologiesNamesArrayId = R.array.java_web_frameworks;
+                technologiesLogosArrayId = R.array.java_web_frameworks_logos;
                 break;
         }
         data = new ArrayList<>();
-        for (String technologyName : getResources().getStringArray(id)) {
-            data.add(new Technology(0, technologyName, ""));
+        String[] technologiesNames = getResources().getStringArray(technologiesNamesArrayId);
+        TypedArray technologiesLogos = getResources().obtainTypedArray(technologiesLogosArrayId);
+        for (int i = 0; i < technologiesNames.length; i++) {
+            data.add(new Technology(technologiesLogos.getResourceId(i, -1), technologiesNames[i], ""));
         }
         myAdapter = new MyAdapter(inflater.getContext());
-
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(inflater.getContext(), android.R.layout.simple_expandable_list_item_1, getResources().getStringArray(id));
-//        setListAdapter(adapter);
-
         return inflater.inflate(R.layout.fragment_show_list, container, false);
     }
 

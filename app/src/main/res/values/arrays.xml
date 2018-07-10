@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--<integer-array name="js_spa_frameworks_logos">-->
+        <!--<item>@drawable/struts</item>-->
+        <!--<item>@drawable/struts</item>-->
+        <!--<item>@drawable/hibernate</item>-->
+        <!--<item>@drawable/gwt</item>-->
+        <!--<item>@drawable/vaadin</item>-->
+        <!--<item>@drawable/wicket</item>-->
+        <!--<item>@drawable/vertx</item>-->
+        <!--<item>@drawable/spring</item>-->
+        <!--<item>@drawable/play</item>-->
+        <!--<item>@drawable/grails</item>-->
+    <!--</integer-array>-->
+
+    <integer-array name="java_web_frameworks_logos">
+        <item>@drawable/jsf</item>
+        <item>@drawable/struts</item>
+        <item>@drawable/hibernate</item>
+        <item>@drawable/gwt</item>
+        <item>@drawable/vaadin</item>
+        <item>@drawable/wicket</item>
+        <item>@drawable/vertx</item>
+        <item>@drawable/spring</item>
+        <item>@drawable/play</item>
+        <item>@drawable/grails</item>
+    </integer-array>
+</resources>

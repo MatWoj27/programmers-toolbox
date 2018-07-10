@@ -40,7 +40,7 @@ public class MyAdapter extends ArrayAdapter<Technology> {
         } else {
             holder = (Holder)convertView.getTag();
         }
-        holder.technologyIcon.setImageResource(R.mipmap.jsf);
+        holder.technologyIcon.setImageResource(technology.getIconId());
         holder.technologyName.setText(technology.getName());
         return convertView;
     }
