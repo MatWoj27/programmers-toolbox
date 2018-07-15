@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--<integer-array name="js_spa_frameworks_logos">-->
-        <!--<item>@drawable/struts</item>-->
-        <!--<item>@drawable/struts</item>-->
-        <!--<item>@drawable/hibernate</item>-->
-        <!--<item>@drawable/gwt</item>-->
-        <!--<item>@drawable/vaadin</item>-->
-        <!--<item>@drawable/wicket</item>-->
-        <!--<item>@drawable/vertx</item>-->
-        <!--<item>@drawable/spring</item>-->
-        <!--<item>@drawable/play</item>-->
-        <!--<item>@drawable/grails</item>-->
-    <!--</integer-array>-->
+    <integer-array name="js_spa_frameworks_logos">
+        <item>@drawable/angular_64</item>
+        <item>@drawable/ember_64</item>
+        <item>@drawable/ext_64</item>
+        <item>@drawable/knockout_64</item>
+        <item>@drawable/meteor_64</item>
+        <item>@drawable/aurelia_64</item>
+        <item>@drawable/vue_64</item>
+        <item>@drawable/react_64</item>
+    </integer-array>
 
     <integer-array name="java_web_frameworks_logos">
         <item>@drawable/jsf_64</item>

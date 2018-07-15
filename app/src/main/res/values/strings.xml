@@ -50,7 +50,7 @@
             Java programming language. It provides a framework for mapping an object-oriented
             domain model to a relational database. Hibernate handles object-relational impedance
             mismatch problems by replacing direct, persistent database accesses with high-level
-            object handling functions. Hibernate's primary feature is mapping from Java classes
+            object handling functions. Hibernate\'s primary feature is mapping from Java classes
             to database tables, and mapping from Java data types to SQL data types. Hibernate also
             provides data query and retrieval facilities. It generates SQL calls and relieves the
             developer from the manual handling and object conversion of the result set.</item>
@@ -74,7 +74,7 @@
             blown back-end message-bus application, Vert.x is a great fit. Vert.x is used by many
             different companies from real-time gaming to banking and everything in between.</item>
         <item>The Spring Framework is an application framework and inversion of control container
-            for the Java platform. The framework's core features can be used by any Java application,
+            for the Java platform. The framework\'s core features can be used by any Java application,
             but there are extensions for building web applications on top of the Java EE (Enterprise Edition)
             platform. Although the framework does not impose any specific programming model, it has
             become popular in the Java community as an addition to, or even replacement for the Enterprise
