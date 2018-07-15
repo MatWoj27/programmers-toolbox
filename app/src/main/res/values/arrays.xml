@@ -15,15 +15,15 @@
     <!--</integer-array>-->
 
     <integer-array name="java_web_frameworks_logos">
-        <item>@drawable/jsf</item>
-        <item>@drawable/struts</item>
-        <item>@drawable/hibernate</item>
-        <item>@drawable/gwt</item>
-        <item>@drawable/vaadin</item>
-        <item>@drawable/wicket</item>
-        <item>@drawable/vertx</item>
-        <item>@drawable/spring</item>
-        <item>@drawable/play</item>
-        <item>@drawable/grails</item>
+        <item>@drawable/jsf_64</item>
+        <item>@drawable/struts_64</item>
+        <item>@drawable/hibernate_64</item>
+        <item>@drawable/gwt_64</item>
+        <item>@drawable/vaadin_64</item>
+        <item>@drawable/wicket_64</item>
+        <item>@drawable/vertx_64</item>
+        <item>@drawable/spring_64</item>
+        <item>@drawable/play_64</item>
+        <item>@drawable/grails_64</item>
     </integer-array>
 </resources>

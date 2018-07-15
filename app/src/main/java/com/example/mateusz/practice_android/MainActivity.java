@@ -22,10 +22,11 @@ import android.widget.ShareActionProvider;
 
 import com.example.mateusz.practice_android.fragments.HomeFragment;
 import com.example.mateusz.practice_android.fragments.ShowListFragment;
+import com.example.mateusz.practice_android.fragments.ShowTechnologyFragment;
 import com.example.mateusz.practice_android.interfaces.Categorized;
 import com.example.mateusz.practice_android.models.Technology;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements ShowListFragment.TechnologiesListListener {
 
     private ShareActionProvider shareActionProvider;
     private String[] categories;
@@ -33,6 +34,14 @@ public class MainActivity extends Activity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private int currentPosition = 0;
+
+    @Override
+    public void itemClicked(Technology technology) {
+        ShowTechnologyFragment showTechnologyFragment = new ShowTechnologyFragment();
+        showTechnologyFragment.setTechnology(technology);
+        replaceFragment(showTechnologyFragment);
+        getActionBar().setTitle(technology.getName());
+    }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
 
@@ -80,10 +89,16 @@ public class MainActivity extends Activity {
             @Override
             public void onBackStackChanged() {
                 FragmentManager fragmentManager = getFragmentManager();
-                Categorized fragment = (Categorized) fragmentManager.findFragmentByTag("visible_fragment");
-                currentPosition = fragment.getCategoryId();
-                setActionBarTitle(currentPosition);
-                drawerList.setItemChecked(currentPosition, true);
+                Fragment fragment = fragmentManager.findFragmentByTag("visible_fragment");
+                if (fragment instanceof Categorized) {
+                    Categorized categorizedFragment = (Categorized) fragment;
+                    currentPosition = categorizedFragment.getCategoryId();
+                    setActionBarTitle(currentPosition);
+                    drawerList.setItemChecked(currentPosition, true);
+                } else {
+                    ShowTechnologyFragment showTechnologyFragment = (ShowTechnologyFragment)fragment;
+                    getActionBar().setTitle(showTechnologyFragment.getTechnology().getName());
+                }
             }
         });
     }
@@ -104,13 +119,17 @@ public class MainActivity extends Activity {
                 fragment = new HomeFragment();
                 fragment.setCategoryId(0);
         }
+        replaceFragment((Fragment) fragment);
+        setActionBarTitle(position);
+        drawerLayout.closeDrawer(drawerList);
+    }
+
+    private void replaceFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.content_frame, (Fragment) fragment, "visible_fragment");
+        fragmentTransaction.replace(R.id.content_frame, fragment, "visible_fragment");
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();
-        setActionBarTitle(position);
-        drawerLayout.closeDrawer(drawerList);
     }
 
     @Override

@@ -7,6 +7,12 @@
     <string name="fragment_home_text">Lets learn something!</string>
     <string name="open_drawer">Open drawer</string>
     <string name="close_drawer">Close drawer</string>
+    <string name="note_hint">Write your note</string>
+    <string-array name="categories">
+        <item>Home</item>
+        <item>JS SPA frameworks</item>
+        <item>Java Web frameworks</item>
+    </string-array>
     <string-array name="js_spa_frameworks">
         <item>AngularJS</item>
         <item>Ember.js</item>
@@ -29,9 +35,61 @@
         <item>Play!</item>
         <item>Grails</item>
     </string-array>
-    <string-array name="categories">
-        <item>Home</item>
-        <item>JS SPA frameworks</item>
-        <item>Java Web frameworks</item>
+    <string-array name="java_web_frameworks_descriptions">
+        <item>JavaServer Faces (JSF) is a Java specification for building component-based user
+            interfaces for web applications and was formalized as a standard through the Java
+            Community Process being part of the Java Platform, Enterprise Edition.
+            It is also a MVC web framework that simplifies construction of user interfaces (UI)
+            for server-based applications by using reusable UI components in a page.</item>
+        <item>Apache Struts is an open-source web application framework for developing Java EE web
+            applications. It uses and extends the Java Servlet API to encourage developers to adopt
+            a model–view–controller (MVC) architecture. It was originally created by Craig McClanahan
+            and donated to the Apache Foundation in May 2000. Formerly located under the Apache Jakarta
+            Project and known as Jakarta Struts, it became a top-level Apache project in 2005.</item>
+        <item>Hibernate ORM (Hibernate in short) is an object-relational mapping tool for the
+            Java programming language. It provides a framework for mapping an object-oriented
+            domain model to a relational database. Hibernate handles object-relational impedance
+            mismatch problems by replacing direct, persistent database accesses with high-level
+            object handling functions. Hibernate's primary feature is mapping from Java classes
+            to database tables, and mapping from Java data types to SQL data types. Hibernate also
+            provides data query and retrieval facilities. It generates SQL calls and relieves the
+            developer from the manual handling and object conversion of the result set.</item>
+        <item>Google Web Toolkit (GWT), or GWT Web Toolkit, is an open source set of tools
+            that allows web developers to create and maintain complex JavaScript front-end
+            applications in Java. Other than a few native libraries, everything is Java source
+            that can be built on any supported platform with the included GWT Ant build files.
+            It is licensed under the Apache License version 2.0. GWT emphasizes reusable approaches
+            to common web development tasks, namely asynchronous remote procedure calls, history
+            management, bookmarking, UI abstraction, internationalization, and cross-browser portability.</item>
+        <item>Vaadin is an open-source platform for web application development. The Vaadin platform
+            includes a set of web components, a Java web framework, and a set of tools and application
+            starters. It's flagship product, Vaadin Flow (previously Vaadin Framework) allows the
+            implementation of HTML5 web user interfaces using the Java Programming Language.</item>
+        <item>Apache Wicket, commonly referred to as Wicket, is a lightweight component-based web
+            application framework for the Java programming language conceptually similar to JavaServer
+            Faces and Tapestry. It was originally written by Jonathan Locke in April 2004. Version
+            1.0 was released in June 2005. It graduated into an Apache top-level project in June 2007.</item>
+        <item>Vert.x is incredibly flexible - whether it's simple network utilities, sophisticated
+            modern web applications, HTTP/REST microservices, high volume event processing or a full
+            blown back-end message-bus application, Vert.x is a great fit. Vert.x is used by many
+            different companies from real-time gaming to banking and everything in between.</item>
+        <item>The Spring Framework is an application framework and inversion of control container
+            for the Java platform. The framework's core features can be used by any Java application,
+            but there are extensions for building web applications on top of the Java EE (Enterprise Edition)
+            platform. Although the framework does not impose any specific programming model, it has
+            become popular in the Java community as an addition to, or even replacement for the Enterprise
+            JavaBeans (EJB) model. The Spring Framework is open source.</item>
+        <item>Play Framework is an open-source web application framework, written in Scala and also usable
+            from other programming languages that are compiled to Bytecode, e.g. Java, which follows the
+            model–view–controller (MVC) architectural pattern. It aims to optimize developer productivity by
+            using convention over configuration, hot code reloading and display of errors in the browser.
+            Support for the Scala programming language has been available since version 1.1 of the framework.
+            In version 2.0, the framework core was rewritten in Scala. Build and deployment was migrated to SBT,
+            and templates use Scala instead of Apache Groovy.</item>
+        <item>Grails is an open source web application framework that uses the Apache Groovy programming language
+            (which is in turn based on the Java platform). It is intended to be a high-productivity framework by
+            following the "coding by convention" paradigm, providing a stand-alone development environment and
+            hiding much of the configuration detail from the developer.</item>
     </string-array>
+
 </resources>

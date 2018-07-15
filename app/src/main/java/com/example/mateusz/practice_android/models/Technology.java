@@ -1,10 +1,14 @@
 package com.example.mateusz.practice_android.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Mateusz on 7/7/2018.
  */
 
-public class Technology {
+public class Technology implements Parcelable{
+
     private int iconId;
     private String name;
     private String description;
@@ -13,6 +17,36 @@ public class Technology {
         this.iconId = iconId;
         this.name = name;
         this.description = description;
+    }
+
+    protected Technology(Parcel in) {
+        iconId = in.readInt();
+        name = in.readString();
+        description = in.readString();
+    }
+
+    public static final Creator<Technology> CREATOR = new Creator<Technology>() {
+        @Override
+        public Technology createFromParcel(Parcel in) {
+            return new Technology(in);
+        }
+
+        @Override
+        public Technology[] newArray(int size) {
+            return new Technology[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(iconId);
+        parcel.writeString(name);
+        parcel.writeString(description);
     }
 
     public int getIconId() {
@@ -38,4 +72,5 @@ public class Technology {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }

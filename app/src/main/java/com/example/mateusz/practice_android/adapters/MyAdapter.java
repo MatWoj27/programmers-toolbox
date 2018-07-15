@@ -19,6 +19,7 @@ import com.example.mateusz.practice_android.models.Technology;
  */
 
 public class MyAdapter extends ArrayAdapter<Technology> {
+
     LayoutInflater inflater;
 
     public MyAdapter(@NonNull Context context) {
