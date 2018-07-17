@@ -37,10 +37,9 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
 
     @Override
     public void itemClicked(Technology technology) {
-        ShowTechnologyFragment showTechnologyFragment = new ShowTechnologyFragment();
-        showTechnologyFragment.setTechnology(technology);
-        replaceFragment(showTechnologyFragment);
-        getActionBar().setTitle(technology.getName());
+        Intent intent = new Intent(this, ShowTechnologyActivity.class);
+        intent.putExtra(ShowTechnologyActivity.TECHNOLOGY_TAG, technology);
+        startActivity(intent);
     }
 
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
@@ -62,10 +61,9 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
         drawerList.setOnItemClickListener(new DrawerItemClickListener());
         if (savedInstanceState != null) {
             currentPosition = savedInstanceState.getInt("position");
-            setActionBarTitle(currentPosition);
-        } else {
-            selectItem(currentPosition);
         }
+        setActionBarTitle(currentPosition);
+        selectItem(currentPosition);
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer) {
 
             @Override
@@ -95,9 +93,6 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
                     currentPosition = categorizedFragment.getCategoryId();
                     setActionBarTitle(currentPosition);
                     drawerList.setItemChecked(currentPosition, true);
-                } else {
-                    ShowTechnologyFragment showTechnologyFragment = (ShowTechnologyFragment)fragment;
-                    getActionBar().setTitle(showTechnologyFragment.getTechnology().getName());
                 }
             }
         });
@@ -189,7 +184,7 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
             return true;
         }
         switch (item.getItemId()) {
-            case R.id.action_create_order:
+            case R.id.action_make_note:
                 Intent intent = new Intent(this, NoteActivity.class);
                 startActivity(intent);
                 return true;

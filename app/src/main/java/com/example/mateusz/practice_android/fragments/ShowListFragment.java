@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.mateusz.practice_android.MainActivity;
 import com.example.mateusz.practice_android.R;
 import com.example.mateusz.practice_android.adapters.MyAdapter;
 import com.example.mateusz.practice_android.interfaces.Categorized;
@@ -52,12 +53,12 @@ public class ShowListFragment extends Fragment implements Categorized, ListView.
             switch (categoryId) {
                 case 1:
                     technologiesNamesArrayId = R.array.js_spa_frameworks;
-                    technologiesLogosArrayId = R.array.js_spa_frameworks_logos;
-                    technologiesDescriptionsArrayId = R.array.java_web_frameworks_descriptions;
+                    technologiesLogosArrayId = R.array.js_spa_frameworks_logos_64;
+                    technologiesDescriptionsArrayId = R.array.js_spa_frameworks_descriptions;
                     break;
                 case 2:
                     technologiesNamesArrayId = R.array.java_web_frameworks;
-                    technologiesLogosArrayId = R.array.java_web_frameworks_logos;
+                    technologiesLogosArrayId = R.array.java_web_frameworks_logos_128;
                     technologiesDescriptionsArrayId = R.array.java_web_frameworks_descriptions;
                     break;
             }
@@ -81,6 +82,7 @@ public class ShowListFragment extends Fragment implements Categorized, ListView.
         list = (ListView) view.findViewById(R.id.technology_list);
         list.setAdapter(myAdapter);
         list.setOnItemClickListener(this);
+        myAdapter.clear();
         myAdapter.addAll(data);
         myAdapter.notifyDataSetChanged();
     }

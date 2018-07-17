@@ -4,15 +4,17 @@
     <string name="action_make_note">Make a note</string>
     <string name="action_settings">Settings</string>
     <string name="action_share">Share</string>
-    <string name="fragment_home_text">Lets learn something!</string>
+    <string name="fragment_home_text">Let\'s learn something!</string>
     <string name="open_drawer">Open drawer</string>
     <string name="close_drawer">Close drawer</string>
     <string name="note_hint">Write your note</string>
+
     <string-array name="categories">
         <item>Home</item>
         <item>JS SPA frameworks</item>
         <item>Java Web frameworks</item>
     </string-array>
+
     <string-array name="js_spa_frameworks">
         <item>AngularJS</item>
         <item>Ember.js</item>
@@ -23,6 +25,7 @@
         <item>Vue.js</item>
         <item>React</item>
     </string-array>
+
     <string-array name="java_web_frameworks">
         <item>JSF</item>
         <item>Struts</item>
@@ -35,6 +38,7 @@
         <item>Play!</item>
         <item>Grails</item>
     </string-array>
+
     <string-array name="java_web_frameworks_descriptions">
         <item>JavaServer Faces (JSF) is a Java specification for building component-based user
             interfaces for web applications and was formalized as a standard through the Java
@@ -63,13 +67,13 @@
             management, bookmarking, UI abstraction, internationalization, and cross-browser portability.</item>
         <item>Vaadin is an open-source platform for web application development. The Vaadin platform
             includes a set of web components, a Java web framework, and a set of tools and application
-            starters. It's flagship product, Vaadin Flow (previously Vaadin Framework) allows the
+            starters. It\'s flagship product, Vaadin Flow (previously Vaadin Framework) allows the
             implementation of HTML5 web user interfaces using the Java Programming Language.</item>
         <item>Apache Wicket, commonly referred to as Wicket, is a lightweight component-based web
             application framework for the Java programming language conceptually similar to JavaServer
             Faces and Tapestry. It was originally written by Jonathan Locke in April 2004. Version
             1.0 was released in June 2005. It graduated into an Apache top-level project in June 2007.</item>
-        <item>Vert.x is incredibly flexible - whether it's simple network utilities, sophisticated
+        <item>Vert.x is incredibly flexible - whether it\'s simple network utilities, sophisticated
             modern web applications, HTTP/REST microservices, high volume event processing or a full
             blown back-end message-bus application, Vert.x is a great fit. Vert.x is used by many
             different companies from real-time gaming to banking and everything in between.</item>
@@ -92,4 +96,50 @@
             hiding much of the configuration detail from the developer.</item>
     </string-array>
 
+    <string-array name="js.spa_frameworks_descriptions">
+        <item>AngularJS is a JavaScript-based open-source front-end web application framework mainly maintained
+            by Google and by a community of individuals and corporations to address many of the challenges encountered
+            in developing single-page applications. The JavaScript components complement Apache Cordova, a framework
+            used for developing cross-platform mobile apps. It aims to simplify both the development and the testing
+            of such applications by providing a framework for client-side model–view–controller (MVC) and model–view–viewmodel
+            (MVVM) architectures, along with components commonly used in rich Internet applications.</item>
+        <item>Ember.js is an open-source JavaScript web framework, based on the Model–view–viewmodel (MVVM) pattern. It
+            allows developers to create scalable single-page web applications by incorporating common idioms and best
+            practices into the framework. Ember is used on many popular websites, including Discourse, Groupon, LinkedIn,
+            Vine, Live Nation, Nordstrom, Twitch.tv and Chipotle. Although primarily considered a framework for the web,
+            it is also possible to build desktop and mobile applications in Ember. The most notable example of an Ember
+            desktop application is Apple Music, a feature of the iTunes desktop application.</item>
+        <item>Ext JS is a pure JavaScript application framework for building interactive cross platform web applications
+            using techniques such as Ajax, DHTML and DOM scripting. It can be used as a simple component framework
+            (to e.g. create dynamic grids on otherwise static pages), but also as a full framework for building single-page
+            applications. Originally built as an add-on library extension of YUI by Jack Slocum on April 15, 2007, beginning
+            with version 1.1, Ext JS retains no dependencies on external libraries, instead making their use optional.</item>
+        <item>Knockout is a standalone JavaScript implementation of the Model-View-ViewModel pattern with templates. The
+            underlying principles are a clear separation between domain data, view components and data to be displayed and
+            the presence of a clearly defined layer of specialized code to manage the relationships between the view components.
+            The latter leverages the native event management features of the JavaScript language. These features streamline and
+            simplify the specification of complex relationships between view components, which in turn make the display more
+            responsive and the user experience richer.</item>
+        <item>Meteor, or MeteorJS, is a free and open-source isomorphic JavaScript web framework written using Node.js. Meteor
+            allows for rapid prototyping and produces cross-platform (Android, iOS, Web) code. It integrates with MongoDB and
+            uses the Distributed Data Protocol and a publish–subscribe pattern to automatically propagate data changes to clients
+            without requiring the developer to write any synchronization code. On the client, Meteor can be used with its own
+            Blaze templating engine, as well as with the Angular or React frameworks.</item>
+        <item>Aurelia is a collection of Modern JavaScript modules, which when used together, function as a powerful platform
+            for building browser, desktop and mobile applications, all open source and built on open web standards. Rather than
+            being a monolithic framework, Aurelia is broken down into a collection of feature-oriented modules. Examples of
+            feature modules include metadata, dependency injection, binding, templating, router and more. Each module is written
+            using ECMAScript (aka JavaScript) or TypeScript (a strict superset of JavaScript that adds compile-time type checking).
+            Many of these modules can be used individually in any type of JavaScript project, including Node.js.</item>
+        <item>Vue.js is an open-source JavaScript framework for building user interfaces. Integration into projects that use
+            other JavaScript libraries is simplified with Vue because it is designed to be incrementally adoptable. Vue can also
+            function as a web application framework capable of powering advanced single-page applications. The project focuses
+            on making ideas in web UI development (components, declarative UI, hot-reloading, time-travel debugging, etc.) more
+            approachable. It attempts to be less opinionated and thus easier for developers to pick up. It features an incrementally
+            adoptable architecture.</item>
+        <item>In computing, React (also known as React.js or ReactJS) is a JavaScript library for building user interfaces. It is
+            maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development
+            of single-page or mobile applications. Complex React applications usually require the use of additional libraries for
+            state management, routing, and interaction with an API.</item>
+    </string-array>
 </resources>
