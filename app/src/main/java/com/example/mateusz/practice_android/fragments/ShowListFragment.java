@@ -112,6 +112,11 @@ public class ShowListFragment extends Fragment implements Categorized, ListView.
                 technologiesLogosArrayId = R.array.php_frameworks_logos;
                 technologiesDescriptionsArrayId = R.array.php_frameworks_descriptions;
                 break;
+            default:
+                technologiesNamesArrayId = R.array.to_add;
+                technologiesLogosArrayId = R.array.to_add_logos;
+                technologiesDescriptionsArrayId = R.array.to_add_descriptions;
+                break;
         }
     }
 

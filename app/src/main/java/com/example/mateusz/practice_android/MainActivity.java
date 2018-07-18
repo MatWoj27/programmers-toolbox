@@ -97,28 +97,6 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
         });
     }
 
-    private void selectItem(int position) {
-        currentPosition = position;
-        Categorized fragment;
-        if (position != 0) {
-            fragment = new ShowListFragment();
-        } else {
-            fragment = new HomeFragment();
-        }
-        fragment.setCategoryId(position);
-        replaceFragment((Fragment) fragment);
-        setActionBarTitle(position);
-        drawerLayout.closeDrawer(drawerList);
-    }
-
-    private void replaceFragment(Fragment fragment) {
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.content_frame, fragment, VISIBLE_FRAGMENT_TAG);
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-        fragmentTransaction.commit();
-    }
-
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         boolean drawerOpen = drawerLayout.isDrawerOpen(drawerList);
@@ -144,16 +122,6 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
         outState.putInt(CURRENT_POSITION_TAG, currentPosition);
     }
 
-    private void setActionBarTitle(int position) {
-        String title;
-        if (position == 0) {
-            title = getResources().getString(R.string.app_name);
-        } else {
-            title = categories[position];
-        }
-        getActionBar().setTitle(title);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -161,13 +129,6 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
         shareActionProvider = (ShareActionProvider) menuItem.getActionProvider();
         setShareActionProviderIntent("I am learning something new!");
         return super.onCreateOptionsMenu(menu);
-    }
-
-    private void setShareActionProviderIntent(String text) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, text);
-        shareActionProvider.setShareIntent(intent);
     }
 
     @Override
@@ -185,6 +146,45 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void selectItem(int position) {
+        currentPosition = position;
+        Categorized fragment;
+        if (position != 0) {
+            fragment = new ShowListFragment();
+        } else {
+            fragment = new HomeFragment();
+        }
+        fragment.setCategoryId(position);
+        replaceFragment((Fragment) fragment);
+        setActionBarTitle(position);
+        drawerLayout.closeDrawer(drawerList);
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.content_frame, fragment, VISIBLE_FRAGMENT_TAG);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        fragmentTransaction.commit();
+    }
+
+    private void setActionBarTitle(int position) {
+        String title;
+        if (position == 0) {
+            title = getResources().getString(R.string.app_name);
+        } else {
+            title = categories[position];
+        }
+        getActionBar().setTitle(title);
+    }
+
+    private void setShareActionProviderIntent(String text) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+        shareActionProvider.setShareIntent(intent);
     }
 
 }

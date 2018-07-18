@@ -11,9 +11,15 @@
 
     <string-array name="categories">
         <item>Home</item>
-        <item>JS SPA frameworks</item>
-        <item>Java Web frameworks</item>
-        <item>PHP frameworks</item>
+        <item>JS SPA Frameworks</item>
+        <item>Java Web Frameworks</item>
+        <item>PHP Frameworks</item>
+        <item>Python Web Frameworks</item>
+        <item>CSS Frameworks</item>
+        <item>Java Application Servers</item>
+        <item>Database Management Softwares</item>
+        <item>Version Control Systems</item>
+        <item>Linux Distributions</item>
     </string-array>
 
     <string-array name="js_spa_frameworks">
@@ -51,6 +57,19 @@
         <item>Slim</item>
         <item>FuelPHP</item>
         <item>PHPixie</item>
+    </string-array>
+
+    <string-array name="to_add">
+        <item>Technology has not been added yet</item>
+        <item>Technology has not been added yet</item>
+        <item>Technology has not been added yet</item>
+        <item>Technology has not been added yet</item>
+        <item>Technology has not been added yet</item>
+        <item>Technology has not been added yet</item>
+        <item>Technology has not been added yet</item>
+        <item>Technology has not been added yet</item>
+        <item>Technology has not been added yet</item>
+        <item>Technology has not been added yet</item>
     </string-array>
 
     <string-array name="java_web_frameworks_descriptions">
@@ -204,4 +223,18 @@
             that can be used as well without the framework itself. The PHPixie components are 100% unit tested, and require minimum
             dependencies.</item>
     </string-array>
+
+    <string-array name="to_add_descriptions">
+        <item>Description for this technology has not been added yet.</item>
+        <item>Description for this technology has not been added yet.</item>
+        <item>Description for this technology has not been added yet.</item>
+        <item>Description for this technology has not been added yet.</item>
+        <item>Description for this technology has not been added yet.</item>
+        <item>Description for this technology has not been added yet.</item>
+        <item>Description for this technology has not been added yet.</item>
+        <item>Description for this technology has not been added yet.</item>
+        <item>Description for this technology has not been added yet.</item>
+        <item>Description for this technology has not been added yet.</item>
+    </string-array>
+
 </resources>

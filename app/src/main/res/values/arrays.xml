@@ -38,4 +38,17 @@
         <item>@drawable/phpixie_128</item>
     </integer-array>
 
+    <integer-array name="to_add_logos">
+        <item>@drawable/in_progress_128</item>
+        <item>@drawable/in_progress_128</item>
+        <item>@drawable/in_progress_128</item>
+        <item>@drawable/in_progress_128</item>
+        <item>@drawable/in_progress_128</item>
+        <item>@drawable/in_progress_128</item>
+        <item>@drawable/in_progress_128</item>
+        <item>@drawable/in_progress_128</item>
+        <item>@drawable/in_progress_128</item>
+        <item>@drawable/in_progress_128</item>
+    </integer-array>
+
 </resources>
