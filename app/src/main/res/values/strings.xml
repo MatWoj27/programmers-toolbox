@@ -13,6 +13,7 @@
         <item>Home</item>
         <item>JS SPA frameworks</item>
         <item>Java Web frameworks</item>
+        <item>PHP frameworks</item>
     </string-array>
 
     <string-array name="js_spa_frameworks">
@@ -37,6 +38,19 @@
         <item>Spring MVC</item>
         <item>Play!</item>
         <item>Grails</item>
+    </string-array>
+
+    <string-array name="php_frameworks">
+        <item>Laravel</item>
+        <item>Symfony</item>
+        <item>CodeIgniter</item>
+        <item>Yii 2</item>
+        <item>Phalcon</item>
+        <item>CakePHP</item>
+        <item>Zend Framework</item>
+        <item>Slim</item>
+        <item>FuelPHP</item>
+        <item>PHPixie</item>
     </string-array>
 
     <string-array name="java_web_frameworks_descriptions">
@@ -141,5 +155,53 @@
             maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development
             of single-page or mobile applications. Complex React applications usually require the use of additional libraries for
             state management, routing, and interaction with an API.</item>
+    </string-array>
+
+    <string-array name="php_frameworks_descriptions">
+        <item>Laravel is a free, open-source PHP web framework, created by Taylor Otwell and intended for the development of web
+            applications following the model–view–controller (MVC) architectural pattern and based on Symfony. Some of the features
+            of Laravel are a modular packaging system with a dedicated dependency manager, different ways for accessing relational
+            databases, utilities that aid in application deployment and maintenance, and its orientation toward syntactic sugar.</item>
+        <item>Symfony is a PHP web application framework and a set of reusable PHP components/libraries created to speed up the
+            creation and maintenance of web applications and to replace repetitive coding tasks. Symfony has a low performance
+            overhead used with a bytecode cache.</item>
+        <item>CodeIgniter is an open-source software rapid development web framework, for use in building dynamic web sites with
+            PHP. It is loosely based on the popular model–view–controller (MVC) development pattern. While controller classes are
+            a necessary part of development under CodeIgniter, models and views are optional. Codeigniter can be also modified to
+            use Hierarchical Model View Controller (HMVC) which allows developers to maintain modular grouping of Controller,
+            Models and View arranged in a sub-directory format.</item>
+        <item>Yii 2 is purely object-oriented, and it\’s based on the DRY (Don’t Repeat Yourself) coding concept, so it provides
+            you with a pretty clean and logical code base. Yii 2 is integrated with jQuery, and it comes with a set of AJAX-enabled
+            features, and it implements an easy-to-use skinning and theming mechanism, so it can be a great choice for someone who
+            comes from a frontend background.</item>
+        <item>Phalcon is a PHP web framework based on the model–view–controller (MVC) pattern. Unlike most PHP frameworks, Phalcon
+            is implemented as a web server extension written in Zephir and C, aiming to boost execution speed, reduce resource usage,
+            and handle more HTTP requests per second than comparable frameworks written primarily in PHP. One drawback of this
+            approach is that root/administrative access is required on the server to install Phalcon by building a custom binary or
+            using a precompiled one.</item>
+        <item>CakePHP is an open-source web framework. It follows the model–view–controller (MVC) approach and is written in PHP,
+            modeled after the concepts of Ruby on Rails, and distributed under the MIT License. CakePHP uses well-known software
+            engineering concepts and software design patterns, such as convention over configuration, model–view–controller, active
+            record, association data mapping, and front controller.</item>
+        <item>Zend Framework is an open source, object-oriented web application framework implemented in PHP 7 and licensed under the
+            New BSD License. The framework is basically a collection of professional PHP based packages. The framework uses various
+            packages by the use of Composer as part of its package dependency managers; some of them are PHP unit for testing all
+            packages, Travis CI for continuous Integration Services. Zend Framework provides to users a support of the Model View
+            Controller (MVC) in combination with Front Controller solution.</item>
+        <item>Slim is a PHP micro framework that provides you with everything you need and nothing you don\’t. Micro frameworks are
+            minimalistic in design, they are excellent for smaller apps where a full-stack framework would be an exaggeration. Slim\’s
+            creator was inspired by a Ruby micro framework called Sinatra. Slim is used by many PHP developers for developing RESTful
+            APIs and services. Slim comes with features such as URL routing, client-side HTTP caching, session- and cookie encryption,
+            and it supports “flash” messages across HTTP requests as well.</item>
+        <item>FuelPHP is a flexible full-stack PHP framework that doesn\’t only support the ordinary MVC pattern but also its evolved
+            version, HMVC (Hierarchical Model-View-Controller) at the architecture level. FuelPHP adds an optional class called
+            Presenter (formerly called ViewModel) between the Controller and View layers to hold the logic needed to generate Views.
+            FuelPHP is modular and extendable, takes care of security concerns by providing features such as input and URI filtering
+            and output encoding, and it comes with its own authentication framework, with many other sophisticated features and a
+            detailed documentation.</item>
+        <item>PHPixie is a quite new framework, it started in 2012 with the goal of creating a high-performance framework for read-only
+            websites. PHPixie also implements the HMVC design pattern just like FuelPHP, and is built by using independent components
+            that can be used as well without the framework itself. The PHPixie components are 100% unit tested, and require minimum
+            dependencies.</item>
     </string-array>
 </resources>

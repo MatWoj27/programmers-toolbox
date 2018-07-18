@@ -101,19 +101,12 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
     private void selectItem(int position) {
         currentPosition = position;
         Categorized fragment;
-        switch (position) {
-            case 1:
-                fragment = new ShowListFragment();
-                fragment.setCategoryId(1);
-                break;
-            case 2:
-                fragment = new ShowListFragment();
-                fragment.setCategoryId(2);
-                break;
-            default:
-                fragment = new HomeFragment();
-                fragment.setCategoryId(0);
+        if (position != 0) {
+            fragment = new ShowListFragment();
+        } else {
+            fragment = new HomeFragment();
         }
+        fragment.setCategoryId(position);
         replaceFragment((Fragment) fragment);
         setActionBarTitle(position);
         drawerLayout.closeDrawer(drawerList);

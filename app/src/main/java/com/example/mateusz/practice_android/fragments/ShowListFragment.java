@@ -53,13 +53,18 @@ public class ShowListFragment extends Fragment implements Categorized, ListView.
             switch (categoryId) {
                 case 1:
                     technologiesNamesArrayId = R.array.js_spa_frameworks;
-                    technologiesLogosArrayId = R.array.js_spa_frameworks_logos_64;
+                    technologiesLogosArrayId = R.array.js_spa_frameworks_logos;
                     technologiesDescriptionsArrayId = R.array.js_spa_frameworks_descriptions;
                     break;
                 case 2:
                     technologiesNamesArrayId = R.array.java_web_frameworks;
-                    technologiesLogosArrayId = R.array.java_web_frameworks_logos_128;
+                    technologiesLogosArrayId = R.array.java_web_frameworks_logos;
                     technologiesDescriptionsArrayId = R.array.java_web_frameworks_descriptions;
+                    break;
+                case 3:
+                    technologiesNamesArrayId = R.array.php_frameworks;
+                    technologiesLogosArrayId = R.array.php_frameworks_logos;
+                    technologiesDescriptionsArrayId = R.array.php_frameworks_descriptions;
                     break;
             }
         }

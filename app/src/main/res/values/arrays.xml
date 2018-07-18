@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <integer-array name="js_spa_frameworks_logos_64">
+    <integer-array name="js_spa_frameworks_logos">
         <item>@drawable/angular_64</item>
         <item>@drawable/ember_64</item>
         <item>@drawable/ext_64</item>
@@ -12,7 +12,7 @@
         <item>@drawable/react_64</item>
     </integer-array>
 
-    <integer-array name="java_web_frameworks_logos_128">
+    <integer-array name="java_web_frameworks_logos">
         <item>@drawable/jsf_128</item>
         <item>@drawable/struts_128</item>
         <item>@drawable/hibernate_128</item>
@@ -23,6 +23,19 @@
         <item>@drawable/spring_128</item>
         <item>@drawable/play_128</item>
         <item>@drawable/grails_128</item>
+    </integer-array>
+
+    <integer-array name="php_frameworks_logos">
+        <item>@drawable/laravel_128</item>
+        <item>@drawable/symfony_128</item>
+        <item>@drawable/codeigniter_128</item>
+        <item>@drawable/yii_128</item>
+        <item>@drawable/phalcon_128</item>
+        <item>@drawable/cake_php_128</item>
+        <item>@drawable/zend_framework_128</item>
+        <item>@drawable/slim_128</item>
+        <item>@drawable/fuel_128</item>
+        <item>@drawable/phpixie_128</item>
     </integer-array>
 
 </resources>
