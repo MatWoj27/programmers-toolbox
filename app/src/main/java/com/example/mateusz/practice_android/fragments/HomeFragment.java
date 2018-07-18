@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.example.mateusz.practice_android.R;
 import com.example.mateusz.practice_android.interfaces.Categorized;
 
-public class HomeFragment extends Fragment implements Categorized{
+public class HomeFragment extends Fragment implements Categorized {
 
     private int categoryId;
 

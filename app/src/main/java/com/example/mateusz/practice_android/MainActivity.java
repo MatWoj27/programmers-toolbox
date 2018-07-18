@@ -6,8 +6,6 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
@@ -22,7 +20,6 @@ import android.widget.ShareActionProvider;
 
 import com.example.mateusz.practice_android.fragments.HomeFragment;
 import com.example.mateusz.practice_android.fragments.ShowListFragment;
-import com.example.mateusz.practice_android.fragments.ShowTechnologyFragment;
 import com.example.mateusz.practice_android.interfaces.Categorized;
 import com.example.mateusz.practice_android.models.Technology;
 
@@ -34,6 +31,8 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private int currentPosition = 0;
+    private static final String CURRENT_POSITION_TAG = "currentPosition";
+    private static final String VISIBLE_FRAGMENT_TAG = "visibleFragment";
 
     @Override
     public void itemClicked(Technology technology) {
@@ -60,7 +59,7 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
         drawerList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_activated_1, categories));
         drawerList.setOnItemClickListener(new DrawerItemClickListener());
         if (savedInstanceState != null) {
-            currentPosition = savedInstanceState.getInt("position");
+            currentPosition = savedInstanceState.getInt(CURRENT_POSITION_TAG);
         }
         setActionBarTitle(currentPosition);
         selectItem(currentPosition);
@@ -87,7 +86,7 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
             @Override
             public void onBackStackChanged() {
                 FragmentManager fragmentManager = getFragmentManager();
-                Fragment fragment = fragmentManager.findFragmentByTag("visible_fragment");
+                Fragment fragment = fragmentManager.findFragmentByTag(VISIBLE_FRAGMENT_TAG);
                 if (fragment instanceof Categorized) {
                     Categorized categorizedFragment = (Categorized) fragment;
                     currentPosition = categorizedFragment.getCategoryId();
@@ -114,7 +113,7 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
 
     private void replaceFragment(Fragment fragment) {
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.content_frame, fragment, "visible_fragment");
+        fragmentTransaction.replace(R.id.content_frame, fragment, VISIBLE_FRAGMENT_TAG);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();
@@ -142,7 +141,7 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("position", currentPosition);
+        outState.putInt(CURRENT_POSITION_TAG, currentPosition);
     }
 
     private void setActionBarTitle(int position) {
@@ -160,11 +159,11 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
         getMenuInflater().inflate(R.menu.menu_main, menu);
         MenuItem menuItem = menu.findItem(R.id.action_share);
         shareActionProvider = (ShareActionProvider) menuItem.getActionProvider();
-        setIntent("sample text to share");
+        setShareActionProviderIntent("I am learning something new!");
         return super.onCreateOptionsMenu(menu);
     }
 
-    private void setIntent(String text) {
+    private void setShareActionProviderIntent(String text) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, text);

@@ -7,7 +7,7 @@ import android.widget.EditText;
 
 public class NoteActivity extends Activity {
 
-    private final String noteContentTag = "noteConeten";
+    private static final String NOTE_CONTENT_TAG = "noteConeten";
     private String noteContent;
     private EditText noteEditText;
 
@@ -19,7 +19,7 @@ public class NoteActivity extends Activity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         noteEditText = (EditText) findViewById(R.id.notes);
         if (savedInstanceState != null) {
-            noteContent = savedInstanceState.getString(noteContent);
+            noteContent = savedInstanceState.getString(NOTE_CONTENT_TAG);
             noteEditText.setText(noteContent);
         }
     }
@@ -28,6 +28,6 @@ public class NoteActivity extends Activity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         noteContent = noteEditText.getText().toString();
-        outState.putString(noteContentTag, noteContent);
+        outState.putString(NOTE_CONTENT_TAG, noteContent);
     }
 }

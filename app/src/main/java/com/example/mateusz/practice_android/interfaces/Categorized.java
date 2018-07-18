@@ -6,5 +6,6 @@ package com.example.mateusz.practice_android.interfaces;
 
 public interface Categorized {
     int getCategoryId();
+
     void setCategoryId(int categoryId);
 }

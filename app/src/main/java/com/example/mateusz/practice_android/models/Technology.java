@@ -7,7 +7,7 @@ import android.os.Parcelable;
  * Created by Mateusz on 7/7/2018.
  */
 
-public class Technology implements Parcelable{
+public class Technology implements Parcelable {
 
     private int iconId;
     private String name;

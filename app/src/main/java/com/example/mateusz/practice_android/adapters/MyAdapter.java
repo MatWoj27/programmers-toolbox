@@ -39,7 +39,7 @@ public class MyAdapter extends ArrayAdapter<Technology> {
             holder.technologyName = (TextView) convertView.findViewById(R.id.technology_name);
             convertView.setTag(holder);
         } else {
-            holder = (Holder)convertView.getTag();
+            holder = (Holder) convertView.getTag();
         }
         holder.technologyIcon.setImageResource(technology.getIconId());
         holder.technologyName.setText(technology.getName());

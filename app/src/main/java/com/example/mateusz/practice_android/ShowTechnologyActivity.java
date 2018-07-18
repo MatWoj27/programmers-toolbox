@@ -2,13 +2,9 @@ package com.example.mateusz.practice_android;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ShareActionProvider;
 import android.widget.TextView;
@@ -30,7 +26,7 @@ public class ShowTechnologyActivity extends Activity {
         technologyLogo = findViewById(R.id.show_technology_icon_A);
         technologyDescription = findViewById(R.id.show_technology_description_A);
         if (savedInstanceState != null) {
-            technology = (Technology) savedInstanceState.get("technology");
+            technology = (Technology) savedInstanceState.get(TECHNOLOGY_TAG);
         } else {
             technology = (Technology) getIntent().getParcelableExtra(TECHNOLOGY_TAG);
         }
@@ -42,7 +38,7 @@ public class ShowTechnologyActivity extends Activity {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelable("technology", technology);
+        outState.putParcelable(TECHNOLOGY_TAG, technology);
     }
 
     @Override
@@ -50,7 +46,7 @@ public class ShowTechnologyActivity extends Activity {
         getMenuInflater().inflate(R.menu.menu_show_technology, menu);
         MenuItem menuItem = menu.findItem(R.id.action_share_description);
         shareActionProvider = (ShareActionProvider) menuItem.getActionProvider();
-        setIntent(technology.getDescription());
+        setShareActionProviderIntent(technology.getDescription());
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -64,7 +60,7 @@ public class ShowTechnologyActivity extends Activity {
         }
     }
 
-    private void setIntent(String text) {
+    private void setShareActionProviderIntent(String text) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, text);
