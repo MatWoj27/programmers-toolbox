@@ -150,12 +150,7 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
 
     private void selectItem(int position) {
         currentPosition = position;
-        Categorized fragment;
-        if (position != 0) {
-            fragment = new ShowListFragment();
-        } else {
-            fragment = new HomeFragment();
-        }
+        Categorized fragment = position != 0 ? new ShowListFragment() : new HomeFragment();
         fragment.setCategoryId(position);
         replaceFragment((Fragment) fragment);
         setActionBarTitle(position);
@@ -171,12 +166,7 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
     }
 
     private void setActionBarTitle(int position) {
-        String title;
-        if (position == 0) {
-            title = getResources().getString(R.string.app_name);
-        } else {
-            title = categories[position];
-        }
+        String title = position == 0 ? getResources().getString(R.string.app_name) : categories[position];
         getActionBar().setTitle(title);
     }
 
