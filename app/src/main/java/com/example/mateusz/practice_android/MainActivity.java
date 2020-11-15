@@ -82,17 +82,14 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
 
-        getFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
-            @Override
-            public void onBackStackChanged() {
-                FragmentManager fragmentManager = getFragmentManager();
-                Fragment fragment = fragmentManager.findFragmentByTag(VISIBLE_FRAGMENT_TAG);
-                if (fragment instanceof Categorized) {
-                    Categorized categorizedFragment = (Categorized) fragment;
-                    currentPosition = categorizedFragment.getCategoryId();
-                    setActionBarTitle(currentPosition);
-                    drawerList.setItemChecked(currentPosition, true);
-                }
+        getFragmentManager().addOnBackStackChangedListener(() -> {
+            FragmentManager fragmentManager = getFragmentManager();
+            Fragment fragment = fragmentManager.findFragmentByTag(VISIBLE_FRAGMENT_TAG);
+            if (fragment instanceof Categorized) {
+                Categorized categorizedFragment = (Categorized) fragment;
+                currentPosition = categorizedFragment.getCategoryId();
+                setActionBarTitle(currentPosition);
+                drawerList.setItemChecked(currentPosition, true);
             }
         });
     }
