@@ -7,7 +7,7 @@ import android.widget.EditText;
 
 public class NoteActivity extends Activity {
 
-    private static final String NOTE_CONTENT_TAG = "noteConeten";
+    private static final String NOTE_CONTENT_TAG = "noteContent";
     private String noteContent;
     private EditText noteEditText;
 
