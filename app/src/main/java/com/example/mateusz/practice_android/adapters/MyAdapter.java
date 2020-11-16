@@ -13,18 +13,14 @@ import android.widget.TextView;
 import com.example.mateusz.practice_android.R;
 import com.example.mateusz.practice_android.models.Technology;
 
-
 /**
  * Created by Mateusz on 7/7/2018.
  */
 
 public class MyAdapter extends ArrayAdapter<Technology> {
 
-    LayoutInflater inflater;
-
     public MyAdapter(@NonNull Context context) {
         super(context, R.layout.row_technology);
-        inflater = LayoutInflater.from(context);
     }
 
     @NonNull
@@ -33,7 +29,7 @@ public class MyAdapter extends ArrayAdapter<Technology> {
         Technology technology = getItem(position);
         Holder holder;
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.row_technology, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_technology, parent, false);
             holder = new Holder();
             holder.technologyIcon = (ImageView) convertView.findViewById(R.id.technology_icon);
             holder.technologyName = (TextView) convertView.findViewById(R.id.technology_name);
@@ -50,5 +46,4 @@ public class MyAdapter extends ArrayAdapter<Technology> {
         ImageView technologyIcon;
         TextView technologyName;
     }
-
 }
