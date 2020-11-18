@@ -32,7 +32,8 @@ public class ShowListFragment extends Fragment implements Categorized, ListView.
     private static final String TECH_LOGOS_ARRAY_ID_TAG = "logosId";
     private static final String TECH_DESCRIPTIONS_ARRAY_ID_TAG = "descriptionsId";
 
-    public static interface TechnologiesListListener {
+    @FunctionalInterface
+    public interface TechnologiesListListener {
         void itemClicked(Technology technology);
     }
 
