@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="4dp">
-
-    <ImageView
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:id="@+id/technology_icon"
-        android:paddingRight="8dp"/>
-
-    <TextView
+<layout>
+    <data>
+        <variable
+            name="technology"
+            type="com.example.mateusz.practice_android.models.Technology" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/technology_name"
-        android:textSize="24dp"
-        android:gravity="center_vertical"
-        android:layout_gravity="center_vertical"/>
+        android:orientation="horizontal"
+        android:padding="4dp">
 
-</LinearLayout>
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:id="@+id/technology_icon"
+            android:src="@{context.getDrawable(technology.iconId)}"
+            android:paddingRight="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{technology.name}"
+            android:textSize="24dp"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+</layout>

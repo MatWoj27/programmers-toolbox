@@ -7,10 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.mateusz.practice_android.R;
+import com.example.mateusz.practice_android.databinding.RowTechnologyBinding;
 import com.example.mateusz.practice_android.models.Technology;
 
 /**
@@ -26,24 +25,29 @@ public class MyAdapter extends ArrayAdapter<Technology> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Technology technology = getItem(position);
         Holder holder;
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_technology, parent, false);
-            holder = new Holder();
-            holder.technologyIcon = (ImageView) convertView.findViewById(R.id.technology_icon);
-            holder.technologyName = (TextView) convertView.findViewById(R.id.technology_name);
+            RowTechnologyBinding binding = RowTechnologyBinding.inflate(LayoutInflater.from(getContext()), parent, false);
+            convertView = binding.getRoot();
+            holder = new Holder(binding);
             convertView.setTag(holder);
         } else {
             holder = (Holder) convertView.getTag();
         }
-        holder.technologyIcon.setImageResource(technology.getIconId());
-        holder.technologyName.setText(technology.getName());
+        holder.bind(getItem(position));
         return convertView;
     }
 
     private class Holder {
-        ImageView technologyIcon;
-        TextView technologyName;
+        private RowTechnologyBinding binding;
+
+        Holder(@NonNull RowTechnologyBinding binding) {
+            this.binding = binding;
+        }
+
+        void bind(Technology technology) {
+            binding.setTechnology(technology);
+            binding.executePendingBindings();
+        }
     }
 }
