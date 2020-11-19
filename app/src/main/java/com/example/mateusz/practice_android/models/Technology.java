@@ -2,6 +2,7 @@ package com.example.mateusz.practice_android.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.NonNull;
 
 /**
  * Created by Mateusz on 7/7/2018.
@@ -19,7 +20,7 @@ public class Technology implements Parcelable {
         this.description = description;
     }
 
-    protected Technology(Parcel in) {
+    private Technology(@NonNull Parcel in) {
         iconId = in.readInt();
         name = in.readString();
         description = in.readString();
@@ -43,7 +44,7 @@ public class Technology implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel parcel, int i) {
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
         parcel.writeInt(iconId);
         parcel.writeString(name);
         parcel.writeString(description);
@@ -72,5 +73,4 @@ public class Technology implements Parcelable {
     public void setDescription(String description) {
         this.description = description;
     }
-
 }
