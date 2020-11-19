@@ -1,6 +1,6 @@
 package com.example.mateusz.practice_android.fragments;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -38,9 +38,9 @@ public class ShowListFragment extends Fragment implements Categorized, ListView.
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        listener = (TechnologiesListListener) activity;
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        listener = (TechnologiesListListener) context;
     }
 
     @Override
