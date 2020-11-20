@@ -17,9 +17,10 @@ import com.example.mateusz.practice_android.models.Technology;
 
 import java.util.ArrayList;
 
-public class ShowListFragment extends Fragment implements Categorized, ListView.OnItemClickListener {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    private ListView list;
+public class ShowListFragment extends Fragment implements Categorized, ListView.OnItemClickListener {
     private MyAdapter myAdapter;
     private ArrayList<Technology> data;
     private int categoryId;
@@ -31,6 +32,9 @@ public class ShowListFragment extends Fragment implements Categorized, ListView.
     private static final String TECH_NAMES_ARRAY_ID_TAG = "namesId";
     private static final String TECH_LOGOS_ARRAY_ID_TAG = "logosId";
     private static final String TECH_DESCRIPTIONS_ARRAY_ID_TAG = "descriptionsId";
+
+    @BindView(R.id.technology_list)
+    ListView list;
 
     @FunctionalInterface
     public interface TechnologiesListListener {
@@ -45,6 +49,8 @@ public class ShowListFragment extends Fragment implements Categorized, ListView.
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_show_list, container, false);
+        ButterKnife.bind(this, view);
         if (savedInstanceState != null) {
             categoryId = savedInstanceState.getInt(CATEGORY_ID_TAG);
             technologiesNamesArrayId = savedInstanceState.getInt(TECH_NAMES_ARRAY_ID_TAG);
@@ -55,14 +61,12 @@ public class ShowListFragment extends Fragment implements Categorized, ListView.
         }
         createArrayListOfTechnologies();
         myAdapter = new MyAdapter(inflater.getContext());
-        return inflater.inflate(R.layout.fragment_show_list, container, false);
+        return view;
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        View view = getView();
-        list = (ListView) view.findViewById(R.id.technology_list);
         list.setAdapter(myAdapter);
         list.setOnItemClickListener(this);
         myAdapter.clear();
