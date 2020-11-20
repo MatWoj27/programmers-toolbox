@@ -8,6 +8,7 @@
     <string name="open_drawer">Open drawer</string>
     <string name="close_drawer">Close drawer</string>
     <string name="note_hint">Write your note</string>
+    <string name="technology_icon_content_description">Technology logo</string>
 
     <string-array name="categories">
         <item>Home</item>
