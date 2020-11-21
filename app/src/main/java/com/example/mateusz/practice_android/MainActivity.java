@@ -24,7 +24,6 @@ import com.example.mateusz.practice_android.interfaces.Categorized;
 import com.example.mateusz.practice_android.models.Technology;
 
 public class MainActivity extends Activity implements ShowListFragment.TechnologiesListListener {
-
     private ShareActionProvider shareActionProvider;
     private String[] categories;
     private ListView drawerList;
@@ -173,5 +172,4 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
         intent.putExtra(Intent.EXTRA_TEXT, text);
         shareActionProvider.setShareIntent(intent);
     }
-
 }

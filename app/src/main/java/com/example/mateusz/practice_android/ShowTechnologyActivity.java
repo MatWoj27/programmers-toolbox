@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.example.mateusz.practice_android.models.Technology;
 
 public class ShowTechnologyActivity extends Activity {
-
     public static final String TECHNOLOGY_TAG = "technology";
     private Technology technology;
     private TextView technologyDescription;

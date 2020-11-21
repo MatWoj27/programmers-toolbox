@@ -135,5 +135,4 @@ public class ShowListFragment extends Fragment implements Categorized, ListView.
         }
         technologiesLogos.recycle();
     }
-
 }
