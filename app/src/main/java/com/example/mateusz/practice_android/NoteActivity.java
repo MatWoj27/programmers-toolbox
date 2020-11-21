@@ -5,18 +5,23 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.EditText;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class NoteActivity extends Activity {
     private static final String NOTE_CONTENT_TAG = "noteContent";
     private String noteContent;
-    private EditText noteEditText;
+
+    @BindView(R.id.notes)
+    EditText noteEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
+        ButterKnife.bind(this);
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        noteEditText = (EditText) findViewById(R.id.notes);
         if (savedInstanceState != null) {
             noteContent = savedInstanceState.getString(NOTE_CONTENT_TAG);
             noteEditText.setText(noteContent);

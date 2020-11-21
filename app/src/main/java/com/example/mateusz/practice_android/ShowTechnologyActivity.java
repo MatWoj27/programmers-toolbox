@@ -11,19 +11,25 @@ import android.widget.TextView;
 
 import com.example.mateusz.practice_android.models.Technology;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class ShowTechnologyActivity extends Activity {
     public static final String TECHNOLOGY_TAG = "technology";
     private Technology technology;
-    private TextView technologyDescription;
-    private ImageView technologyLogo;
     private ShareActionProvider shareActionProvider;
+
+    @BindView(R.id.show_technology_description_A)
+    TextView technologyDescription;
+
+    @BindView(R.id.show_technology_icon_A)
+    ImageView technologyLogo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_technology);
-        technologyLogo = findViewById(R.id.show_technology_icon_A);
-        technologyDescription = findViewById(R.id.show_technology_description_A);
+        ButterKnife.bind(this);
         if (savedInstanceState != null) {
             technology = (Technology) savedInstanceState.get(TECHNOLOGY_TAG);
         } else {

@@ -23,15 +23,22 @@ import com.example.mateusz.practice_android.fragments.ShowListFragment;
 import com.example.mateusz.practice_android.interfaces.Categorized;
 import com.example.mateusz.practice_android.models.Technology;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends Activity implements ShowListFragment.TechnologiesListListener {
     private ShareActionProvider shareActionProvider;
     private String[] categories;
-    private ListView drawerList;
-    private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
     private int currentPosition = 0;
     private static final String CURRENT_POSITION_TAG = "currentPosition";
     private static final String VISIBLE_FRAGMENT_TAG = "visibleFragment";
+
+    @BindView(R.id.drawer_list)
+    ListView drawerList;
+
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
 
     @Override
     public void itemClicked(Technology technology) {
@@ -52,9 +59,8 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         categories = getResources().getStringArray(R.array.categories);
-        drawerList = (ListView) findViewById(R.id.drawer_list);
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawerList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_activated_1, categories));
         drawerList.setOnItemClickListener(new DrawerItemClickListener());
         if (savedInstanceState != null) {
