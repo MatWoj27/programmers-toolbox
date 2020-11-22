@@ -129,7 +129,7 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
         getMenuInflater().inflate(R.menu.menu_main, menu);
         MenuItem menuItem = menu.findItem(R.id.action_share);
         shareActionProvider = (ShareActionProvider) menuItem.getActionProvider();
-        setShareActionProviderIntent("I am learning something new!");
+        setShareActionProviderIntent(getString(R.string.action_share_message));
         return super.onCreateOptionsMenu(menu);
     }
 

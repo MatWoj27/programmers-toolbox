@@ -9,6 +9,7 @@
     <string name="close_drawer">Close drawer</string>
     <string name="note_hint">Write your note</string>
     <string name="technology_icon_content_description">Technology logo</string>
+    <string name="action_share_message">I am learning something new!</string>
 
     <string-array name="categories">
         <item>Home</item>
