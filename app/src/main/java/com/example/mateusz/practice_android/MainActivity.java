@@ -66,7 +66,7 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
         if (savedInstanceState != null) {
             currentPosition = savedInstanceState.getInt(CURRENT_POSITION_TAG);
         }
-        setActionBarTitle(currentPosition);
+        presetActionBar();
         selectItem(currentPosition);
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer) {
 
@@ -84,8 +84,6 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
         };
 
         drawerLayout.setDrawerListener(drawerToggle);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
 
         getFragmentManager().addOnBackStackChangedListener(() -> {
             FragmentManager fragmentManager = getFragmentManager();
@@ -148,6 +146,12 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void presetActionBar() {
+        setActionBarTitle(currentPosition);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
     }
 
     private void selectItem(int position) {
