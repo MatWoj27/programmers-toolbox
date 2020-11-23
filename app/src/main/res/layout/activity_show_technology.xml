@@ -1,35 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp"
-    tools:context="com.example.mateusz.practice_android.ShowTechnologyActivity">
-
-    <FrameLayout
+<layout>
+    <data>
+        <variable
+            name="technology"
+            type="com.example.mateusz.practice_android.models.Technology" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp"
+        tools:context="com.example.mateusz.practice_android.ShowTechnologyActivity">
 
-        <ImageView
-            android:id="@+id/show_technology_icon_A"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="center_horizontal|bottom"
-            android:layout_marginBottom="8dp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-    </FrameLayout>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="8dp"
+                android:src="@{context.getDrawable(technology.iconId)}" />
 
-    <TextView
-        android:id="@+id/show_technology_description_A"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="3"
-        android:gravity="center_horizontal"
-        android:paddingTop="8dp"
-        android:textAppearance="?android:textAppearanceMedium" />
+        </FrameLayout>
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center_horizontal"
+            android:paddingTop="8dp"
+            android:text="@{technology.description}"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+    </LinearLayout>
+</layout>

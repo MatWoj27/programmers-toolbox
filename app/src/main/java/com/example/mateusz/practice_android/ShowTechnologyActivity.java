@@ -2,41 +2,30 @@ package com.example.mateusz.practice_android;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
 import android.widget.ShareActionProvider;
-import android.widget.TextView;
 
+import com.example.mateusz.practice_android.databinding.ActivityShowTechnologyBinding;
 import com.example.mateusz.practice_android.models.Technology;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class ShowTechnologyActivity extends Activity {
     public static final String TECHNOLOGY_TAG = "technology";
     private Technology technology;
     private ShareActionProvider shareActionProvider;
 
-    @BindView(R.id.show_technology_description_A)
-    TextView technologyDescription;
-
-    @BindView(R.id.show_technology_icon_A)
-    ImageView technologyLogo;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_technology);
-        ButterKnife.bind(this);
+        ActivityShowTechnologyBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_show_technology);
         if (savedInstanceState != null) {
             technology = (Technology) savedInstanceState.get(TECHNOLOGY_TAG);
         } else {
             technology = (Technology) getIntent().getParcelableExtra(TECHNOLOGY_TAG);
         }
-        technologyLogo.setImageResource(technology.getIconId());
-        technologyDescription.setText(technology.getDescription());
+        binding.setTechnology(technology);
         getActionBar().setTitle(technology.getName());
     }
 
