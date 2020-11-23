@@ -23,7 +23,7 @@ public class ShowTechnologyActivity extends Activity {
         if (savedInstanceState != null) {
             technology = (Technology) savedInstanceState.get(TECHNOLOGY_TAG);
         } else {
-            technology = (Technology) getIntent().getParcelableExtra(TECHNOLOGY_TAG);
+            technology = getIntent().getParcelableExtra(TECHNOLOGY_TAG);
         }
         binding.setTechnology(technology);
         getActionBar().setTitle(technology.getName());
