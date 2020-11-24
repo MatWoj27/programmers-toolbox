@@ -67,24 +67,8 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
             currentPosition = savedInstanceState.getInt(CURRENT_POSITION_TAG);
         }
         presetActionBar();
+        presetDrawerToggle();
         selectItem(currentPosition);
-        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer) {
-
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                super.onDrawerOpened(drawerView);
-                invalidateOptionsMenu();
-            }
-
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                super.onDrawerClosed(drawerView);
-                invalidateOptionsMenu();
-            }
-        };
-
-        drawerLayout.setDrawerListener(drawerToggle);
-
         getFragmentManager().addOnBackStackChangedListener(() -> {
             FragmentManager fragmentManager = getFragmentManager();
             Fragment fragment = fragmentManager.findFragmentByTag(VISIBLE_FRAGMENT_TAG);
@@ -152,6 +136,24 @@ public class MainActivity extends Activity implements ShowListFragment.Technolog
         setActionBarTitle(currentPosition);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
+    }
+
+    private void presetDrawerToggle() {
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open_drawer, R.string.close_drawer) {
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+                super.onDrawerOpened(drawerView);
+                invalidateOptionsMenu();
+            }
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                super.onDrawerClosed(drawerView);
+                invalidateOptionsMenu();
+            }
+        };
+        drawerLayout.setDrawerListener(drawerToggle);
     }
 
     private void selectItem(int position) {
