@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<EditText xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mateusz.practice_android.NoteActivity"
-    android:padding="4dp">
-
-    <EditText
-        android:id="@+id/notes"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="start"
-        android:backgroundTint="@android:color/transparent"
-        android:hint="@string/note_hint" />
-
-</RelativeLayout>
+    android:layout_margin="4dp"
+    android:backgroundTint="@android:color/transparent"
+    android:gravity="start"
+    android:hint="@string/note_hint"
+    tools:context="com.example.mateusz.practice_android.NoteActivity" />
